@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background">
+          <img src="https://images.unsplash.com/photo-1506361797048-46a149213205?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=493e200df17b54d1ef10eb61e1df148a&w=1000&q=80">
+        </div>
+        <a href="#user"><img class="circle" src="http://noticias.universia.pt/pt/images/docentes/p/pe/pes/pessoas-inteligentes-fazem-noticias.jpg"></a>
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a href="principal.html">Pacientes</li>
+      <li><a href="#!">Configurções</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Subheader</a></li>
+      <li><a class="waves-effect" href="#!">Log on</a></li>
+    </ul>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper blue lighten-1">
+          <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+          <a href="#!" class="brand-logo">MindUp</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+        <h3>Memória</h3>
+        <p> O paciente apresenta esquecimento leve e regular ou parcial de eventos, que pode interferir com atividades diárias; repete perguntas e frases, coloca objetos em lugares incomuns; esquece compromissos</p>
+        <h3>Orientação</h3>
+        <p> Leve dificuldade em manter controle do tempo; pode esquecer datas com mais frequência do que no passado</p>
+        <h3>Tomada de decisões e resolução de problemas</h3>
+        <p> Leve debilidade (ou maior demora) na resolução de problemas; dificuldade com conceitos abstratos; decisões ainda coerentes</p>
+        <h3>Atividade fora de casa</h3>
+        <p>Leve debilidade nessas atividades se comparado a desempenhos prévios; leve mudança nas habilidades como motorista; ainda capaz de lidar com situações de emergência</p>
+        <h3>Habilidades em casa e hobbies</h3>
+        <p>Leve debilidade ou perda de interesse nessas atividades; dificuldade em operar equipamentos (sobretudo os mais novos)</p>
+        <h3>Hábitos de higiene pessoal</h3>
+        <p>Mudanças leves nas habilidades com essas atividades</p>
+        <h3>Mudança de comportamento e personalidade</h3>
+        <p>Mudanças questionáveis ou muito leves em comportamento, personalidade, controle emocional, pertinência das escolhas</p>
+        <h3>Habilidade de linguagem e comunicação</h3>
+        <p>Dificuldade leve porém mostra consistência em encontrar as palavras ou termos descritivos; pode levar mais tempo para completar raciocínio; leves problemas de compreensão; conversação debilitada; pode haver efeitos sobre leitura e escrita</p>
+        <h3>Humor</h3>
+        <p>Ocasionais momentos de tristeza, depressão, ansiedade, nervosismo ou perda de interesse/motivação</p>
+        <h3>Atenção e concentração</h3>
+        <p>Problemas leves de atenção, concentração ou interação com o ambiente; pode parecer sonolento durante o dia</p>
+
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, 'DOMContentLoaded');
+      });
+    </script>
+
+
+  </body>
+</html>

@@ -38,12 +38,20 @@
     <div class="container">
       <br>
       <div class="row center-align">
-        <img class="circle" src="https://www.greenme.com.br/images/viver/saude-bem-estar/insatisfeito.jpg" width="100px" height="100px" alt=""><br>
+        <img class="circle" src="../img/1.jpg" width="100px" height="100px" alt=""><br>
         <h5>Nome do Paciente</h5>
       </div>
       <div class="divider"></div>
-      <div style="width:100%;">
-        <canvas id="chart"></canvas>
+      <div id="container">
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="relatorio">Dia do relatório</label>
+          <input id="relatorio" type="text" class="datepicker">
+        </div>
+      </div>
+      <div class="row center-align">
+        <a href="relatorio.html" class="btn">Relatório</a>
       </div>
     </div>
     <!--JavaScript at end of body for optimized loading-->
@@ -53,127 +61,67 @@
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, 'DOMContentLoaded');
       });
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems, 'DOMContentLoaded');
+      });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script type="text/javascript" src="http://www.chartjs.org/dist/2.7.2/Chart.bundle.js"></script>
-    <script type="text/javascript" src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="../code/highcharts.js"></script>
+    <script src="../code/modules/series-label.js"></script>
+    <script src="../code/modules/exporting.js"></script>
+    <script src="../code/modules/export-data.js"></script>
     <script type="text/javascript">
-      var ctx = document.getElementById('chart').getContext('2d');
-      var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      var config = {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-          datasets: [{
-            label: 'Memória',
-            borderColor: window.chartColors.red,
-            backgroundColor: window.chartColors.red,
-            data: [
-              5,
-              25,
-              23,
-              45,
-              12,
-              22,
-              25
-            ],
-          }, {
-            label: 'Atenção',
-            borderColor: window.chartColors.blue,
-            backgroundColor: window.chartColors.blue,
-            data: [
-              22,
-              12,
-              45,
-              35,
-              65,
-              87,
-              12
-            ],
-          }, {
-            label: 'Atenção dividida',
-            borderColor: window.chartColors.green,
-            backgroundColor: window.chartColors.green,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ],
-          }, {
-            label: 'Percepção',
-            borderColor: window.chartColors.yellow,
-            backgroundColor: window.chartColors.yellow,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ],
-          }, {
-            label: 'Linguagem',
-            borderColor: window.chartColors.grey,
-            backgroundColor: window.chartColors.grey,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ],
-          }, {
-            label: 'Funções executivas',
-            borderColor: window.chartColors.purple,
-            backgroundColor: window.chartColors.purple,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ],
-          }]
-        },
-        options: {
-          responsive: true,
+
+      Highcharts.chart('container', {
+
           title: {
-            display: true,
-            text: 'Gráfico das funções cognitivas'
+              text: 'Desempenho do Paciente'
           },
-          tooltips: {
-            mode: 'index',
-          },
-          hover: {
-            mode: 'index'
-          },
-          scales: {
-            xAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: 'Month'
+
+          yAxis: {
+              title: {
+                  text: 'Pontuação nos exercícios'
               }
-            }],
-            yAxes: [{
-              stacked: true,
-              scaleLabel: {
-                display: true,
-                labelString: 'Value'
+          },
+          legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+          },
+
+          plotOptions: {
+              series: {
+                  label: {
+                      connectorAllowed: false
+                  },
+                  pointStart: 2010
               }
-            }]
+          },
+
+          series: [{
+              name: 'Memória',
+              data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+          }, {
+              name: 'Raciocínio',
+              data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+          }],
+
+          responsive: {
+              rules: [{
+                  condition: {
+                      maxWidth: 500
+                  },
+                  chartOptions: {
+                      legend: {
+                          layout: 'horizontal',
+                          align: 'center',
+                          verticalAlign: 'bottom'
+                      }
+                  }
+              }]
           }
-        }
-      };
-      var myChart = new Chart(ctx, config);
-    </script>
+
+      });
+		</script>
   </body>
 </html>
