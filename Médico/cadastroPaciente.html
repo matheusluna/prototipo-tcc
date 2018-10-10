@@ -13,7 +13,7 @@
   <body>
     <nav>
       <div class="nav-wrapper blue lighten-1">
-        <a href="index.html" class="brand-logo"><i class="material-icons">arrow_back</i>Cadastro</a>
+        <a href="principal.html" class="brand-logo"><i class="material-icons">arrow_back</i>Cadastro de Paciente</a>
       </div>
     </nav>
     <div class="container">
@@ -58,7 +58,31 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <label for="">Horário de Exerc</label>
+            <label for="exercicio1">Horário de Exercício 1</label>
+            <input id="exercicio1" type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="exercicio2">Horário de Exercício 2</label>
+            <input id="exercicio2" type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="exercicio3">Horário de Exercício 3</label>
+            <input id="exercicio3" type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="row">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>File</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
           </div>
         </div>
         <div class="row right-align">
@@ -73,6 +97,10 @@
       document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.datepicker');
         var instances = M.Datepicker.init(elems, 'DOMContentLoaded');
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.timepicker');
+        var instances = M.Timepicker.init(elems,'DOMContentLoaded');
       });
     </script>
   </body>
