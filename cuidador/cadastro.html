@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper blue lighten-1">
+        <a href="index.html" class="brand-logo"><i class="material-icons">arrow_back</i>Cadastro</a>
+      </div>
+    </nav>
+    <div class="container">
+      <form class="" action="index.html" method="post">
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="" value="">
+          </div>
+          <div class="input-field col s6">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" name="" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="" value="">
+          </div>
+          <div class="input-field col s6">
+            <label for="datanascimento">Data de nascimento</label>
+            <input type="text" id="datanascimento" class="datepicker">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="" value="">
+          </div>
+        </div>
+        <div class="row right-align">
+          <input type="submit" class="btn" name="" value="Cadastrar">
+        </div>
+      </form>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems, 'DOMContentLoaded');
+      });
+    </script>
+  </body>
+</html>
